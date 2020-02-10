@@ -1,5 +1,5 @@
 import React from 'react'
-import { Document, Font, Text } from '@react-pdf/renderer'
+import { Document, Text } from '@react-pdf/renderer'
 import styled from '@react-pdf/styled-components'
 
 const Body = styled.Page`
@@ -24,9 +24,9 @@ const Adresse = styled.Text`
 `;
 
 const Title = styled.Text`
-  font-size: 24px;
-  text-align: center;
-  font-family: 'Oswald';
+  font-size: 14px;
+  text-align: left;
+  font-family: 'Times-Roman';
 `;
 
 const Subtitle = styled.Text`
@@ -48,9 +48,6 @@ const Paragraph = styled.Text`
   font-family: 'Times-Roman';
 `;
 
-const Picture = styled.Image`
-  margin: 15px 10px;
-`;
 
 const Footer = styled.Text`
   left: 0px;
@@ -62,20 +59,12 @@ const Footer = styled.Text`
   text-align: center;
 `;
 
-Font.register(
-  'https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf',
-  { family: 'Oswald' },
-);
-
 const Contrat = (props) => (
   <Document>
     <Body wrap>
       <Header fixed>
       Proposition de financement
       </Header>
-      {/* <Title>Don Quijote de la Mancha</Title>
-      <Author>Miguel de Cervantes</Author>
-      <Picture src="/static/images/quijote1.jpg" /> */}
       <Description>
         Référence dossier : <Text>{props.reference}</Text>
       </Description>
@@ -85,8 +74,29 @@ const Contrat = (props) => (
       <Subtitle>
       Nous vous remercions d’avoir choisi la banque populaire pour votre projet
       </Subtitle>
+      <Title>
+      VISION​​​
+      </Title>
+      <Paragraph>
+      Groupe composé de la Banque Centrale Populaire et des Banques Populaires Régionales, le Crédit Populaire du Maroc accompagne toute entreprise, moyenne ou petite, artisanale, industrielle ou de service, par une offre de financement à court, moyen ou long termes.
+      Fidèle à son esprit d’entreprise, le Crédit Populaire du Maroc s’est inspiré de l'ensemble des besoins de sa clientèle pour développer une gamme complète de produits et services. 
+      Quatre orientations stratégiques majeure​s g​uident ses activités : ​
+      </Paragraph>
+      <Title>
+      LA CONSOLIDATION DES POSITIONS ACQUISES
+      </Title>
+      <Paragraph>
+      Le Groupe Banque Populaire accélère le développement de ses activités d’intermédiation, de marché, mais aussi de banque de détail. Avec l’ouverture d’une centaine d’agences chaque année, le Groupe dispose du plus large réseau bancaire pour appuyer sa stratégie de croissance. Ce dispositif a permis d’améliorer de façon significative la collecte des ressources et les crédits alloués aux entreprises, soutenu par la nouvelle approche de la Banque Populaire dans ses relations et ses offres dédiées à la clientèle Entreprises.​ 
+      Par ailleurs, le Groupe augmente sensiblement ses parts de marché en matière des crédits immobiliers et de crédits à la consommation, tous les deux en constante hausse.
+      </Paragraph>
+      <Title>
+      LA BANQUE CITOYENNE
+      </Title>
+      <Paragraph>
+      Partenaires financiers de premier plan, les Banques Populaires Régionales du Groupe participent à l’essor de leur région en mobilisant et en utilisant l'épargne au niveau local, au bénéfice des acteurs économiques et sociaux. Elles agissent également pour la bancarisation de la population, en s’appuyant sur la politique de proximité du Groupe, la souplesse dans les ouvertures de comptes et un large réseau de distribution. Le Groupe Banque Populaire est en effet le 1er réseau bancaire du pays avec 1 443 agences, 3 461​​ points de distribution additionnels et plus de 1 911 guichets automatiques à travers tout le Royaume.
+      </Paragraph>
       <Adresse fixed>
-        <Text>101, boulevard Mohamed Zerktouni Casablanca-Tél : 05 22 20 25 33 / 05 22 22 41 11.</Text>
+        <Text>101, boulevard Mohamed Zerktouni Casablanca - Tél : 05 22 20 25 33 / 05 22 22 41 11.</Text>
       </Adresse>
       <Footer render={({ pageNumber, totalPages }) => (
         `${pageNumber} / ${totalPages}`

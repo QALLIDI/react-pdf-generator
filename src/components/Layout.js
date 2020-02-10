@@ -11,7 +11,9 @@ const ContactUs = lazy(() => import('./ContactUs'))
 
 export default function Layout() {
     return(
-    <Suspense fallback={<Spin tip="Loading..."/>}>
+    <Suspense fallback={
+      <Spin size="large" tip="Loading..."/> 
+    }>
       <Route path="/" component={Home} />
       <Route path="/users" component={UserList} />
       <Route path="/about" component={About} />
